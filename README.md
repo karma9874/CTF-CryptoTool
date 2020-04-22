@@ -1,4 +1,8 @@
 # CTF-CryptoTool
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT) 
+[![Twitter Follow](https://img.shields.io/twitter/follow/karma9874?label=Follow&style=social)](https://twitter.com/karma9874)
+[![GitHub followers](https://img.shields.io/github/followers/karma9874?label=Follow&style=social)](https://github.com/karma9874)
+
 CTF-CryptoTool is a tool written in python, for breaking crypto text of CTF challenges. It tries to decode the cipher by bruteforcing it with all known cipher decoding methods easily. Also works for the cipher which does not have a key.
 
 | Known Ciphers  | Known Encodings | Known Obfuscator |
