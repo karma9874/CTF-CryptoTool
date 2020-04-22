@@ -1,4 +1,3 @@
-#https://github.com/linuxjustin/IJCTF/tree/master/pwn/sercretcode
 from itertools import permutations
 import base64
 import binascii
