@@ -17,21 +17,23 @@ CTF-CryptoTool is a tool written in python, for breaking crypto text of CTF chal
 | Keyboard Shift | Rot      |     
 | Morbit Cipher| 
 
-### Screenshots
+## Screenshots
 ![CTF-CryptoTool](https://github.com/karma9874/CTF-CryptoTool/blob/master/Screenshots/1.PNG)
 
-### Installation
+## Installation
 This tool will run on python3
-``` git clone https://github.com/karma9874/CTF-CryptoTool.git```
-``` cd CTF-CryptoTool ```
-``` pip install -r requirments.txt ```
+``` 
+git clone https://github.com/karma9874/CTF-CryptoTool.git
+cd CTF-CryptoTool 
+pip install -r requirments.txt
+  ```
 
-### Usage 
+## Usage 
 ` Just throw the cipher to it `
-``` python3 decoder.py ```
-```Enter the text ``` : Feed the cipher text
-```Enter Key ```      : Enter key if you know any (optional)
-```Enter flag ```	  : Enter some letters of the flag if you know 
+``` 
+python3 decoder.py 
+Enter the text  : Feed the cipher text
+Enter Key      : Enter key if you know any (optional)
+Enter flag 	  : Enter some letters of the flag if you know 
 						Eg: While playing picoCTF you can enter the flag as picoCTF so it can match that text with the ouputs otherwise you may get much more bogus strings   	
-
-
+```
