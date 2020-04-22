@@ -53,13 +53,13 @@ if not key:
 		print(Fore.YELLOW+"\nPossible Octal : ",Fore.GREEN+octal(string)+Fore.RESET)
 
 	if set(string).issubset({">","<","+","-",".","[","]"," "}):
-		print(Fore.YELLOW+"\nPossible brainfuck :",Fore.GREEN+"url")
+		print(Fore.YELLOW+"\nPossible brainfuck :",Fore.GREEN+"https://www.dcode.fr/brainfuck-language")
 
 	if set(string).issubset({"Ook.","Ook?","Ook!"}):
-		print(Fore.YELLOW+"\nPossible ook :",Fore.GREEN+"url")
+		print(Fore.YELLOW+"\nPossible ook :",Fore.GREEN+"https://www.dcode.fr/ook-language")
 		
 	if set(string).issubset({"(","!","[","]","+",")"}):
-		print(Fore.YELLOW+"\nPossible Jsfuck :",Fore.GREEN+"url")
+		print(Fore.YELLOW+"\nPossible Jsfuck :",Fore.GREEN+"https://enkhee-osiris.github.io/Decoder-JSFuck/")
 
 	if ic != None and ic[0] > 0.02:
 		print(Fore.YELLOW+"\nPossible Keyboard Shift Cipher"+Fore.RESET)
