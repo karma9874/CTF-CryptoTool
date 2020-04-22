@@ -17,10 +17,10 @@ CTF-CryptoTool is a tool written in python, for breaking crypto text of CTF chal
 | Keyboard Shift | Rot      |     
 | Morbit Cipher| 
 
-###Screenshots
-![CTF-CryptoTool](https://github.com/karma9874/CTF-CryptoTool/blob/master/Screenshots/1.png)
+### Screenshots
+![CTF-CryptoTool](https://github.com/karma9874/CTF-CryptoTool/blob/master/Screenshots/1.PNG)
 
-# Installation
+### Installation
 This tool will run on python3
 ``` git clone https://github.com/karma9874/CTF-CryptoTool.git```
 ``` cd CTF-CryptoTool ```
