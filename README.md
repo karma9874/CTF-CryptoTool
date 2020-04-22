@@ -37,3 +37,6 @@ Enter Key       : Enter key if you know any (optional)
 Enter flag 	    : Enter some letters of the flag if you know (optional)
 					Eg: While playing picoCTF you can enter the flag as picoCTF so it can match that text with the ouputs otherwise you may get much more bogus strings   	
 ```
+
+## Reference
+[python_cryptanalysis](https://github.com/jameslyons/python_cryptanalysis)
