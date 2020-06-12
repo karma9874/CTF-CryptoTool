@@ -32,24 +32,25 @@ def b64(s):
     try:
         return base64.b64decode(s).decode("utf-8")
     except:
-        return Fore.RED+"Na not base64"
+        return 0
+        
 def b32(s):
     try:
         return base64.b32decode(s).decode("utf-8")
     except:
-        return Fore.RED+"Na not base32"
+        return 0
 
 def b85(s):
     try:
         return base64.a85decode(s).decode("utf-8")
     except:
-        return Fore.RED+"Na not base85"
+        return 0
 
 def hex(s):
     try:
         return binascii.unhexlify(s).decode('utf-8')  
     except:
-        return Fore.RED+"Na not hex"
+        return 0
 
 def bin(s):
     char=""
@@ -85,6 +86,10 @@ def morse(ciphertxt,flag=None):
     return plaintxt
     #print(Fore.GREEN+plaintxt+Fore.RESET)
 
+
+def pretty_print(header,data):
+    print(Fore.YELLOW+"\n"+header+" : ",Style.BRIGHT+Fore.GREEN+data+Fore.RESET)
+
 def morbit(ciphertxt,flag=None):
     if flag==None:
         flag=""
@@ -107,7 +112,7 @@ def octal(octal_str):
         try:
             str_converted += chr(int(octal_char, 8))
         except:
-            return Fore.RED+"Na not octal"
+            return 0
     return str_converted
 
 def atbash(message):

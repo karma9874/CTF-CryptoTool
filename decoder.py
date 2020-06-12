@@ -26,48 +26,67 @@ if flag==None:
 
 ic=getIC(string)
 
+result=""
+
 if not key:
 	if set(string).issubset({'0', '1',' '}):
-		print(Fore.YELLOW+"\nPossible Binary : ",Style.BRIGHT+Fore.GREEN+bin(string)+Fore.RESET)
+		res=bin(string)
+		if res:
+			pretty_print("Possible Binary",res)
+		#print(Fore.YELLOW+"\nPossible Binary : ",Style.BRIGHT+Fore.GREEN+bin(string)+Fore.RESET)
 
-	if len(string)%8==0 and string[-1]=="=" and any(x not in string for x in b_32):
-		print(Fore.YELLOW+"\nPossible Base32 : ",Fore.GREEN+b32(string)+Fore.RESET) 
+	if len(string)%8==0 or string[-1]=="=" and any(x not in string for x in b_32):
+		res=b32(string)
+		if res:
+			pretty_print("Possible Base32",res)
+		#print(Fore.YELLOW+"\nPossible Base32 : ",Fore.GREEN+b32(string)+Fore.RESET) 
 
 	if len(string)%4==0 and string[-1]== '=' and len(set(string))<=65:
-		print(Fore.YELLOW+"\nPossible Base64 : ",Fore.GREEN+b64(string)+Fore.RESET)
+		res = b64(string)
+		if res:
+			pretty_print("Possible Base64",res)
 
 	if set(string).issubset({'-', '.','/'," "}):
-		print(Fore.YELLOW+"\nPossible Morse : ",Fore.GREEN+morse(string,flag)+Fore.RESET)
+		res = morse(string,flag)
+		pretty_print("Possible Morse",res)
 
 	if re.search(r'[0-9a-fA-F]+',string):
-		print(Fore.YELLOW+"\nPossible Hex : ",Fore.GREEN+hex(string)+Fore.RESET)
+		res = hex(string)
+		if res:
+			pretty_print("Possible Hex",res)
 
 	if b85Checker(string):
-		print(Fore.YELLOW+"\nPossible Base85 : ",Fore.GREEN+b85(string)+Fore.RESET)
+		res = b85(string)
+		if res:
+			pretty_print("Possible Base85",res)
 
 	if re.search(r'^[1-9]+$',string):
 		print(Fore.YELLOW+"\nPossible Morbit ")
 		morbit(string,flag)
 
 	if re.search(r"^[0-7\s]+$",string):
-		print(Fore.YELLOW+"\nPossible Octal : ",Fore.GREEN+octal(string)+Fore.RESET)
+		res = octal(string)
+		if res:
+			pretty_print("Possible Octal",res)
 
 	if set(string).issubset({">","<","+","-",".","[","]"," "}):
-		print(Fore.YELLOW+"\nPossible brainfuck :",Fore.GREEN+"https://www.dcode.fr/brainfuck-language")
+		pretty_print("Possible brainfuck","https://www.dcode.fr/brainfuck-language")
 
 	if set(string).issubset({"Ook.","Ook?","Ook!"}):
-		print(Fore.YELLOW+"\nPossible ook :",Fore.GREEN+"https://www.dcode.fr/ook-language")
+		pretty_print("Possible ook","https://www.dcode.fr/ook-language")
+		
 		
 	if set(string).issubset({"(","!","[","]","+",")"}):
-		print(Fore.YELLOW+"\nPossible Jsfuck :",Fore.GREEN+"https://enkhee-osiris.github.io/Decoder-JSFuck/")
+		pretty_print("Possible Jsfuck","https://enkhee-osiris.github.io/Decoder-JSFuck/")
+		
 
 	if ic != None and ic[0] > 0.02:
 		print(Fore.YELLOW+"\nPossible Keyboard Shift Cipher"+Fore.RESET)
-		a,b,c,d = keyboard_cipher(string)
-		print("Right Shift :",Fore.GREEN+''.join(a)+Fore.RESET)
-		print("Left Shift  :",Fore.GREEN+''.join(b)+Fore.RESET)
-		print("Up Shift    :",Fore.GREEN+''.join(c)+Fore.RESET)
-		print("Down Shift  :",Fore.GREEN+''.join(d)+Fore.RESET)
+		# a,b,c,d = keyboard_cipher(string)
+		# print("Right Shift :",Fore.GREEN+''.join(a)+Fore.RESET)
+		# print("Left Shift  :",Fore.GREEN+''.join(b)+Fore.RESET)
+		# print("Up Shift    :",Fore.GREEN+''.join(c)+Fore.RESET)
+		# print("Down Shift  :",Fore.GREEN+''.join(d)+Fore.RESET)
 		max_key = break_caesar(string)
 		if flag.lower() in Caesar(max_key[1]).decipher(string).lower():
 			print(Fore.YELLOW+"\nPossible Caesar Cipher"+Fore.RESET,"Decoded String:"+Fore.GREEN,Caesar(max_key[1]).decipher(string)+Fore.RESET,"Key:",Fore.BLUE+str(max_key[1]))
