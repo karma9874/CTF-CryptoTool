@@ -46,6 +46,11 @@ if not key:
 		if res:
 			pretty_print("Possible Base64",res)
 
+	if ('I' not in string) and ('O' not in string) and ('l' not in string) and (len(set(string)) < 58) and ('0' not in string):
+  		res = b58(string)
+  		if res:
+  			pretty_print("Possible Base58", res)
+
 	if set(string).issubset({'-', '.','/'," "}):
 		res = morse(string,flag)
 		pretty_print("Possible Morse",res)
