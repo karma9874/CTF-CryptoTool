@@ -1,6 +1,7 @@
 from itertools import permutations
 import base64
 import base58
+from Utils.base91 import b91decode, b91check
 import binascii
 import numpy as np
 import re
@@ -50,6 +51,12 @@ def b58(s):
 def b85(s):
     try:
         return base64.a85decode(s).decode("utf-8")
+    except:
+        return 0
+
+def b91(s):
+    try:
+        return b91decode(s)
     except:
         return 0
 

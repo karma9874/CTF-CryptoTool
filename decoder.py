@@ -65,6 +65,11 @@ if not key:
 		if res:
 			pretty_print("Possible Base85",res)
 
+	if b91check(string):
+		res = b91(string)
+		if res:
+			pretty_print("Possible Base91",res)
+
 	if re.search(r'^[1-9]+$',string):
 		print(Fore.YELLOW+"\nPossible Morbit ")
 		morbit(string,flag)
