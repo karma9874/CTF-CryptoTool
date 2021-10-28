@@ -100,6 +100,22 @@ def morse(ciphertxt,flag=None):
     return plaintxt
     #print(Fore.GREEN+plaintxt+Fore.RESET)
 
+def unary_decode(s):
+    b = ""    
+    decoded = ""
+
+    while s:
+        b += '0' * len(s[1]) if s[0] == "00" else '1' * len(s[1])
+        s = s[2:]
+    
+    n = int(b, 2)
+    decoded = n.to_bytes((n.bit_length()+7)//8, byteorder="big")
+
+    try:
+        return decoded.decode()
+    except:
+        return 0
+
 
 def pretty_print(header,data):
     print(Fore.YELLOW+"\n"+header+" : ",Style.BRIGHT+Fore.GREEN+data+Fore.RESET)
