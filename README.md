@@ -16,6 +16,7 @@ CTF-CryptoTool is a tool written in python, for breaking crypto text of CTF chal
 | Railfence Cipher | Morse      |     
 | Keyboard Shift | Rot      |     
 | Morbit Cipher| Base58 |
+| Chuck Norris Unary Code | Base91 |
 
 ## Screenshots
 ![CTF-CryptoTool](https://github.com/karma9874/CTF-CryptoTool/blob/master/Screenshots/1.PNG)

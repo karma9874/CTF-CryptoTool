@@ -25,7 +25,7 @@ if flag==None:
 	flag=""
 
 ic=getIC(string)
-
+print('ic',ic)
 result=""
 
 if not key:
@@ -41,7 +41,7 @@ if not key:
 			pretty_print("Possible Base32",res)
 		#print(Fore.YELLOW+"\nPossible Base32 : ",Fore.GREEN+b32(string)+Fore.RESET) 
 
-	if len(string)%4==0 and string[-1]== '=' and len(set(string))<=65:
+	if len(string)%4==0 or string[-1]== '=' and len(set(string))<=65:
 		res = b64(string)
 		if res:
 			pretty_print("Possible Base64",res)
@@ -69,6 +69,12 @@ if not key:
 		res = b91(string)
 		if res:
 			pretty_print("Possible Base91",res)
+
+	s = string.split(' ')
+	if s[0] == s[4]:
+		res = unary_decode(s)
+		if res:
+			pretty_print("Possible Chuck Norris Unary Code",res)
 
 	if re.search(r'^[1-9]+$',string):
 		print(Fore.YELLOW+"\nPossible Morbit ")
