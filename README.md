@@ -26,7 +26,7 @@ This tool will run on python3
 ``` 
 git clone https://github.com/karma9874/CTF-CryptoTool.git
 cd CTF-CryptoTool 
-pip3 install -r requirments.txt
+pip3 install -r requirements.txt
   ```
 
 ## Usage 
