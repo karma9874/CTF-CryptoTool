@@ -47,9 +47,9 @@ if not key:
 			pretty_print("Possible Base64",res)
 
 	if ('I' not in string) and ('O' not in string) and ('l' not in string) and (len(set(string)) < 58) and ('0' not in string):
-  		res = b58(string)
-  		if res:
-  			pretty_print("Possible Base58", res)
+		res = b58(string)
+		if res:
+			pretty_print("Possible Base58", res)
 
 	if set(string).issubset({'-', '.','/'," "}):
 		res = morse(string,flag)
@@ -71,10 +71,16 @@ if not key:
 			pretty_print("Possible Base91",res)
 
 	s = string.split(' ')
-	if s[0] == s[4]:
-		res = unary_decode(s)
-		if res:
-			pretty_print("Possible Chuck Norris Unary Code",res)
+	try:
+		if s[0] == s[4]:
+			if s[0] == s[4]:
+				res = unary_decode(s)
+				if res:
+					pretty_print("Possible Chuck Norris Unary Code",res)
+	except IndexError:
+		# Handle the situation where s does not have 5 elements
+		print("Error: The list 's' does not have enough elements... Skipping mighty chuck norris")
+
 
 	if re.search(r'^[1-9]+$',string):
 		print(Fore.YELLOW+"\nPossible Morbit ")
